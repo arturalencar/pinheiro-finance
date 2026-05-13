@@ -1,6 +1,7 @@
+/* ===== MOBILE-FIRST ===== */
 .coin {
 	background-color: var(--bg-card);
-	padding: 1.5rem;
+	padding: 1.25rem;
 	border-radius: var(--radius);
 	border: 1px solid var(--border-color);
 	transition: transform 0.2s ease;
@@ -16,7 +17,7 @@
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1.25rem;
 }
 
 .coin-brand-group {
@@ -33,7 +34,7 @@
 }
 
 .coin__name {
-	font-size: 1.125rem;
+	font-size: 1rem;
 	font-weight: 600;
 	text-transform: initial;
 }
@@ -51,7 +52,7 @@
 }
 
 .coin__current-price {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	font-weight: 700;
 	letter-spacing: -0.5px;
 }
@@ -63,7 +64,6 @@
 	font-weight: 600;
 }
 
-/* Classes utilitárias para variações negativas e positivas*/
 .positive {
 	background-color: rgba(16, 185, 129, 0.15);
 	color: var(--green);
@@ -72,4 +72,23 @@
 .negative {
 	background-color: rgba(239, 68, 68, 0.15);
 	color: var(--red);
+}
+
+/* ===== TABLET (≥768px) ===== */
+@media (min-width: 768px) {
+    .coin {
+        padding: 1.5rem;
+    }
+
+    .coin__label {
+        margin-bottom: 1.5rem;
+    }
+
+    .coin__name {
+        font-size: 1.125rem;
+    }
+
+    .coin__current-price {
+        font-size: 1.5rem;
+    }
 }

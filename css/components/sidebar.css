@@ -1,13 +1,113 @@
+/* ==========================================================
+   SIDEBAR  — mobile-first
+   ========================================================== */
+
+/* ===== BASE (mobile): off-screen fixed drawer ===== */
 .sidebar {
     background-color: var(--bg-sidebar);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-right: 1px solid var(--border-color);
-    box-shadow: rgba(0, 0, 0, 0.1) 4px 0px 6px -1px, rgba(0, 0, 0, 0.06) 2px 0px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.1) 4px 0px 6px -1px,
+                rgba(0, 0, 0, 0.06) 2px 0px 4px -1px;
+
+    /* drawer behaviour */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    height: 100dvh;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.sidebar.sidebar--open {
+    transform: translateX(0);
+}
 
+/* ===== Overlay ===== */
+.sidebar__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar__overlay.sidebar__overlay--visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== Hamburger toggle ===== */
+.sidebar__toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.4rem;
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar__toggle:hover {
+    background-color: var(--bg-card);
+}
+
+.sidebar__toggle-bar {
+    display: block;
+    width: 1.25rem;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animated X when sidebar is open */
+.sidebar--open ~ .main-content .sidebar__toggle .sidebar__toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.sidebar--open ~ .main-content .sidebar__toggle .sidebar__toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+.sidebar--open ~ .main-content .sidebar__toggle .sidebar__toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== DESKTOP (≥1024px): static sidebar, hide hamburger ===== */
+@media (min-width: 1024px) {
+    .sidebar {
+        position: static;
+        transform: none;
+        height: auto;
+        z-index: auto;
+        transition: none;
+    }
+
+    .sidebar__toggle {
+        display: none;
+    }
+
+    .sidebar__overlay {
+        display: none;
+    }
+}
+
+/* ==========================================================
+   NAV  — unchanged internals
+   ========================================================== */
 .nav__logo-container {
     display: flex;
     align-items: center;
@@ -72,6 +172,7 @@
     font-size: var(--fs-subtitle);
 }
 
+/* ==== THEME TOGGLE ==== */
 .theme__container {
 	color: var(--text-primary);
     background-color: var(--bg-sidebar);

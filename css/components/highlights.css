@@ -1,5 +1,6 @@
+/* ===== MOBILE-FIRST ===== */
 .highlights {
-    padding: 2rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -26,9 +27,33 @@
     color: var(--text-primary);
 }
 
+/* Mobile: single column */
 .hl__coins-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
+/* ===== TABLET (≥768px): two columns ===== */
+@media (min-width: 768px) {
+    .highlights {
+        padding: 1.5rem;
+    }
+
+    .hl__coins-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+    }
+}
+
+/* ===== DESKTOP (≥1024px): three columns ===== */
+@media (min-width: 1024px) {
+    .highlights {
+        padding: 2rem;
+    }
+
+    .hl__coins-list {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.5rem;
+    }
+}

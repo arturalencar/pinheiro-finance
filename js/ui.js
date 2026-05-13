@@ -10,7 +10,7 @@ export function renderTable(coins) {
 		const isPositive = coin.price_change_percentage_24h > 0;
 		const row = `
 			<tr>
-				<td>
+				<td data-label="Ativo">
 					<div class="coin-info">
 						<img
 							src="${coin.image}"
@@ -23,16 +23,16 @@ export function renderTable(coins) {
 						</div>
 					</div>
 				</td>
-				<td class="price-cell">
+				<td class="price-cell" data-label="Preço Atual">
 					${coin.current_price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'	})}
 				</td>
-				<td class="${isPositive ? 'text-positive' : 'text-negative'}">
+				<td class="${isPositive ? 'text-positive' : 'text-negative'}" data-label="Variação 24h">
 					${isPositive ? '+' : ''}${coin.price_change_percentage_24h.toFixed(2)}%
 				</td>
-				<td>
+				<td data-label="Tendência 7d">
 					<span class="sparkline-placeholder">--</span>
 				</td>
-				<td>
+				<td data-label="Ação">
 					<button
 						class="btn-favorite"
 						data-id="${coin.id}"

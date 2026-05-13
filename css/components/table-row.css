@@ -1,12 +1,12 @@
 .coin-info {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
 }
 
 .coin-logo {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .coin-name {
@@ -27,4 +27,16 @@
 
 .text-negative {
     color: var(--red);
+}
+
+/* ===== TABLET+ (≥768px): restore larger gap ===== */
+@media (min-width: 768px) {
+    .coin-info {
+        gap: 2rem;
+    }
+
+    .coin-logo {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 }

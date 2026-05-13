@@ -1,11 +1,23 @@
+/* ===== MOBILE-FIRST: base = smartphone ===== */
 .app__container {
     background-color: var(--bg-main);
     display: grid;
-    grid-template-columns: 15rem 1fr;
-    height: 100vh;
-    overflow: hidden;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
 }
 
 .main-content {
     overflow-y: auto;
+    min-width: 0; /* prevent grid blowout */
+}
+
+/* ===== DESKTOP (≥1024px) ===== */
+@media (min-width: 1024px) {
+    .app__container {
+        grid-template-columns: var(--sidebar-width) 1fr;
+        height: 100vh;
+        overflow: hidden;
+    }
 }

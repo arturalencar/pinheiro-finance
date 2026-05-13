@@ -20,6 +20,7 @@
 
     --green: #10B981;
     --red: #ef4444;
+    --yellow-favorite: #FBBF24;
 
     --font-main:
         'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Roboto',
@@ -33,7 +34,7 @@
     
     --shadow-sm: 0 2px 4px rgba(28, 28, 26, 0.05);
 
-    --sidebar-width: 260px;
+    --sidebar-width: 16rem;
 }
 
 [data-theme='light'] {

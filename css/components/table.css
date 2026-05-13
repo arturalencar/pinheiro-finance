@@ -1,51 +1,148 @@
+/* ==========================================================
+   TABLE  — mobile-first (card layout on small screens)
+   ========================================================== */
+
 .market-table-container {
-  padding: 2rem;
+    padding: 1.25rem;
 }
 
+/* ===== MOBILE: card-based rows ===== */
 .market-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-  color: var(--text-primary);
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    color: var(--text-primary);
 }
 
-.market-table th {
-  text-align: left;
-  padding: 1rem;
-  color: var(--text-secondary);
-  font-weight: 600;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--border-color);
+/* Hide the table header on mobile */
+.market-table thead {
+    display: none;
 }
 
+/* Each row becomes a card */
+.market-table tbody tr {
+    display: block;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    transition: background-color 0.2s ease;
+}
+
+.market-table tbody tr:hover {
+    background-color: var(--bg-card-hover);
+}
+
+/* Each td becomes a row inside the card */
 .market-table td {
-  padding: 1.2rem 1rem;
-  border-bottom: 1px solid var(--border-color);
-  vertical-align: middle;
-  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0;
+    border-bottom: none;
+    vertical-align: middle;
 }
 
-.market-table tr:hover {
-  background-color: rgba(255, 255, 255, 0.02);
+/* Label from data-label attribute */
+.market-table td::before {
+    content: attr(data-label);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-right: 1rem;
 }
 
-/* Alinhamento de preços na tabela (Direita ou Centro costuma ser melhor) */
+/* The "Ativo" cell with coin-info should not show a ::before label,
+   it is self-descriptive */
+.market-table td:first-child::before {
+    display: none;
+}
+
+.market-table td:first-child {
+    justify-content: flex-start;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
 .market-table .price-cell {
-  font-weight: 600;
-  font-size: 1.1rem;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .btn-favorite {
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: color 0.2s;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.2s;
 }
 
 .btn-favorite.active {
-  color: #fbbf24; /* Amarelo/Dourado */
+    color: var(--yellow-favorite);
 }
 
+/* ===== TABLET (≥768px) ===== */
+@media (min-width: 768px) {
+    .market-table-container {
+        padding: 1.5rem;
+    }
+
+    .market-table thead {
+        display: table-header-group;
+    }
+
+    .market-table tbody tr {
+        display: table-row;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .market-table td {
+        display: table-cell;
+        padding: 1.2rem 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .market-table td::before {
+        display: none;
+    }
+
+    .market-table td:first-child {
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 0;
+        padding-bottom: 1.2rem;
+    }
+
+    .market-table th {
+        text-align: left;
+        padding: 1rem;
+        color: var(--text-secondary);
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .market-table tr:hover {
+        background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    .market-table .price-cell {
+        font-size: 1.1rem;
+    }
+}
+
+/* ===== DESKTOP (≥1024px) ===== */
+@media (min-width: 1024px) {
+    .market-table-container {
+        padding: 2rem;
+    }
+}
