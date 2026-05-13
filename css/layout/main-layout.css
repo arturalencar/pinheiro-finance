@@ -1,0 +1,11 @@
+.app__container {
+    background-color: var(--bg-main);
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-content {
+    overflow-y: auto;
+}

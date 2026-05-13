@@ -1,0 +1,17 @@
+@import url("css/variables.css");
+@import url("css/layout/main-layout.css");
+@import url("css/base/reset.css");
+@import url("css/components/sidebar.css");
+@import url("css/components/topbar.css");
+@import url("css/components/highlights.css");
+@import url("css/components/card.css");
+@import url("css/components/inputs.css");
+@import url("css/components/table.css");
+@import url("css/components/table-row.css");
+
+body {
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
