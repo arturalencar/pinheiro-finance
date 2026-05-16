@@ -12,6 +12,8 @@
 			rel="stylesheet"
 			href="styles.css"
 		/>
+		<style>.hidden { display: none !important; }</style>
+
 		<link
 			rel="preconnect"
 			href="https://fonts.googleapis.com"
@@ -166,38 +168,48 @@
 					</div>
 				</header>
 
-				<section class="highlights">
-					<div class="section__title">
-						<div class="section__title--detail"></div>
-						<h2>Destaques 24h</h2>
-					</div>
+				<div id="market-view">
+					<section class="highlights">
+						<div class="section__title">
+							<div class="section__title--detail"></div>
+							<h2>Destaques 24h</h2>
+						</div>
 
-					<ul class="hl__coins-list" id="coins-list">
-						
-					</ul>
-				</section>
-
-				<section
-					class="market-table-container"
-					id="coin-grid"
-				>
-					<div class="section__title">
-						<div class="section__title--detail"></div>
-						<h2>Criptoativos</h2>
-					</div>
-					<table class="market-table">
-						<thead>
-							<tr>
-								<th>Ativo</th>
-								<th>Preço Atual</th>
-								<th>Variação 24h</th>
-								<th>Ação</th>
-							</tr>
-						</thead>
-						<tbody id="coin-table-body">
+						<ul class="hl__coins-list" id="coins-list">
 							
-						</tbody>
-					</table>
+						</ul>
+					</section>
+
+					<section
+						class="market-table-container"
+						id="coin-grid"
+					>
+						<div class="section__title">
+							<div class="section__title--detail"></div>
+							<h2>Criptoativos</h2>
+						</div>
+						<table class="market-table">
+							<thead>
+								<tr>
+									<th>Ativo</th>
+									<th>Preço Atual</th>
+									<th>Variação 24h</th>
+									<th>Ação</th>
+								</tr>
+							</thead>
+							<tbody id="coin-table-body">
+								
+							</tbody>
+						</table>
+					</section>
+				</div>
+
+				<section id="favorites-view" class="highlights hidden">
+					<div class="section__title">
+						<div class="section__title--detail"></div>
+						<h2>Meus Favoritos</h2>
+					</div>
+					<ul class="hl__coins-list" id="favorites-list"></ul>
 				</section>
 			</main>
 		</div>

@@ -76,14 +76,54 @@
 .btn-favorite {
     background: none;
     border: none;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     cursor: pointer;
     font-size: 1.2rem;
-    transition: color 0.2s;
+    padding: 0.25rem;
+    border-radius: var(--radius);
+    transition: color 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-favorite:hover {
+    color: var(--yellow-favorite);
+    transform: scale(1.2);
 }
 
 .btn-favorite.active {
     color: var(--yellow-favorite);
+}
+
+/* ===== Favorites empty state ===== */
+.favorites__empty {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 3rem 1rem;
+    color: var(--text-secondary);
+    text-align: center;
+    list-style: none;
+}
+
+.favorites__empty-icon {
+    font-size: 3rem;
+    color: var(--yellow-favorite);
+    opacity: 0.5;
+}
+
+.favorites__empty p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.favorites__empty span {
+    font-size: 0.875rem;
 }
 
 /* ===== TABLET (≥768px) ===== */
