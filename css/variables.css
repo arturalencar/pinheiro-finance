@@ -7,6 +7,7 @@
     --border-color: #334155;
 
     --primary-blue: #2682f1;
+    --hover-blue: #3a86ff;
     --deep-blue: #0d2770;
 
     --beige-primary: #E3C39D;
@@ -37,19 +38,20 @@
     --sidebar-width: 16rem;
 }
 
-[data-theme='light'] {
-    --bg-main: #f5f5f0;
-    --bg-sidebar: #efeee5;
-    --bg-card: #ffffff;
-    --bg-card-hover: #fafaf9;
+[data-theme="light"] {
+  --bg-main: #f0f6f7; 
+  
+  --bg-sidebar: #f1f8fc; 
 
-    --border-color: rgba(0, 0, 0, 0.05);
+  --bg-card: #ffffff;
+  --bg-card-hover: #e4eefd;
+  --hover-blue: #c7dcfd;
 
-    --primary-blue: #2563eb;
-    --deep-blue: #0d2770;
-
-    --text-primary: #1c1c1a;
-    --text-secondary: #71716a;
-
-    --shadow-sm: 0 2px 4px rgba(28, 28, 26, 0.05);
+  --border-color: rgba(141, 139, 126, 0.12); 
+  
+  --text-primary: #1e2530;   
+  --text-secondary: #687181; 
+  
+  --shadow-sm: 0 2px 8px rgba(30, 37, 48, 0.04);
+  --shadow-md: 0 4px 20px rgba(30, 37, 48, 0.08);
 }

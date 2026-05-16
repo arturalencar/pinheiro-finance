@@ -4,13 +4,15 @@
 	padding: 1.25rem;
 	border-radius: var(--radius);
 	border: 1px solid var(--border-color);
-	transition: transform 0.2s ease;
+	transition: transform 0.2s ease-in-out;
 	color: var(--text-primary);
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
 
 .coin:hover {
 	background-color: var(--bg-card-hover);
 	transform: translateY(-4px);
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 2px 4px;
 }
 
 .coin__label {

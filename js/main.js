@@ -1,6 +1,35 @@
 import { getCoins } from "./api.js";
 import { renderTable, renderHighlights } from "./ui.js";
 
+// ===== Theme toggle logic =====
+function initTheme() {
+    const switcher = document.getElementById("theme__switcher");
+    const root = document.documentElement;
+
+    if (!switcher) return;
+
+    // Restore saved preference (default: dark)
+    // checked = dark (knob near moon), unchecked = light (knob near sun)
+    const savedTheme = localStorage.getItem("theme") ?? "dark";
+    if (savedTheme === "dark") {
+        root.removeAttribute("data-theme");
+        switcher.checked = true;
+    } else {
+        root.setAttribute("data-theme", "light");
+        switcher.checked = false;
+    }
+
+    switcher.addEventListener("change", () => {
+        if (switcher.checked) {
+            root.removeAttribute("data-theme");
+            localStorage.setItem("theme", "dark");
+        } else {
+            root.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+        }
+    });
+}
+
 // ===== Sidebar toggle logic =====
 function initSidebar() {
     const sidebar = document.querySelector(".sidebar");
@@ -42,6 +71,7 @@ function initSidebar() {
 async function init() {
     console.log("Iniciando aplicação...");
 
+    initTheme();
     initSidebar();
 
     const coins = await getCoins();

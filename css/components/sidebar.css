@@ -152,7 +152,7 @@
 
 .nav__list-item.active a,
 .nav__list-item a:hover {
-    background-color: var(--primary-blue);
+    background-color: var(--hover-blue);
     color: var(--text-primary);
 }
 
@@ -207,7 +207,7 @@
     width: 4rem;
     height: 2rem;
     display: block;
-    background: var(--text-primary);
+    background: var(--bg-main);
     border-radius: 1rem;
     box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.3);
     cursor: pointer;
@@ -221,17 +221,17 @@
     position: absolute;
     top: 0.1rem;
     left: 0.1rem;
-    background: linear-gradient(180deg, var(--text-primary), var(--primary-blue));
+    background: linear-gradient(180deg, var(--bg-card-hover), var(--bg-card));
     border-radius: 11rem;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #theme__switcher:checked + .theme__label {
-    background: var(--text-secondary);
+    background: var(--bg-card);
 }
 
 #theme__switcher:checked + .theme__label::after {
-    background: linear-gradient(180deg, var(--bg-card), var(--deep-blue));
+    background: var(--bg-sidebar);
     transform: translateX(2rem);
 } 
 
@@ -249,7 +249,7 @@
 .theme__label > .ph-sun {
     left: 0.5rem;
     top: 0.5rem;
-    color: var(--text-black);
+    color: var(--text-primary);
     transition: 0.3s;
 }
 
@@ -261,7 +261,7 @@
 }
 
 #theme__switcher:checked + .theme__label .ph-sun {
-    color: var(--text-black-muted);
+    color: var(--text-secondary);
 }
 
 #theme__switcher:checked + .theme__label .ph-moon {
