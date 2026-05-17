@@ -36,6 +36,7 @@
     --shadow-sm: 0 2px 4px rgba(28, 28, 26, 0.05);
 
     --sidebar-width: 16rem;
+    --header-height: 3.75rem;
 }
 
 [data-theme="light"] {

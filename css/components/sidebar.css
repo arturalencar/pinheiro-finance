@@ -12,6 +12,9 @@
     box-shadow: rgba(0, 0, 0, 0.1) 4px 0px 6px -1px,
                 rgba(0, 0, 0, 0.06) 2px 0px 4px -1px;
 
+    /* push nav below the fixed app-header */
+    padding-top: calc(var(--header-height) + 2rem);
+
     /* drawer behaviour */
     position: fixed;
     top: 0;
@@ -53,9 +56,8 @@
     gap: 5px;
     width: 2.5rem;
     height: 2.5rem;
-    padding: 0.4rem;
     background: none;
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: var(--radius);
     cursor: pointer;
     flex-shrink: 0;
@@ -75,14 +77,17 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Animated X when sidebar is open */
-.sidebar--open ~ .main-content .sidebar__toggle .sidebar__toggle-bar:nth-child(1) {
+/* Animated X when sidebar is open — targets any toggle bar on the page */
+.sidebar--open ~ .sidebar__overlay ~ .main-content .sidebar__toggle .sidebar__toggle-bar:nth-child(1),
+.app__container:has(.sidebar--open) .sidebar__toggle .sidebar__toggle-bar:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
-.sidebar--open ~ .main-content .sidebar__toggle .sidebar__toggle-bar:nth-child(2) {
+.sidebar--open ~ .sidebar__overlay ~ .main-content .sidebar__toggle .sidebar__toggle-bar:nth-child(2),
+.app__container:has(.sidebar--open) .sidebar__toggle .sidebar__toggle-bar:nth-child(2) {
     opacity: 0;
 }
-.sidebar--open ~ .main-content .sidebar__toggle .sidebar__toggle-bar:nth-child(3) {
+.sidebar--open ~ .sidebar__overlay ~ .main-content .sidebar__toggle .sidebar__toggle-bar:nth-child(3),
+.app__container:has(.sidebar--open) .sidebar__toggle .sidebar__toggle-bar:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
 
@@ -113,7 +118,7 @@
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
-    padding: 1.5rem 1rem 1.5rem 1.5rem;
+    padding: 1rem 1rem 1rem 1.5rem;
     color: var(--text-primary);
     border-bottom: 2px solid var(--border-color);
 }

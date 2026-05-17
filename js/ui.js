@@ -29,7 +29,7 @@ export function renderTable(coins) {
 				<td class="${isPositive ? 'text-positive' : 'text-negative'}" data-label="Variação 24h">
 					${isPositive ? '+' : ''}${coin.price_change_percentage_24h.toFixed(2)}%
 				</td>
-				<td data-label="Ação">
+				<td data-label="Favoritar">
 					<button
 						class="btn-favorite"
 						data-id="${coin.id}"

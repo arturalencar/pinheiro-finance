@@ -24,7 +24,6 @@ export function showView(viewName) {
     const favView    = document.getElementById('favorites-view');
     const navMarket  = document.getElementById('nav__market');
     const navFav     = document.getElementById('nav__favorites');
-    const pageTitle  = document.querySelector('.top-bar__title');
 
     const isMarket = viewName === 'market';
 
@@ -32,10 +31,6 @@ export function showView(viewName) {
     favView?.classList.toggle('hidden',  isMarket);
     navMarket?.classList.toggle('active', isMarket);
     navFav?.classList.toggle('active',   !isMarket);
-
-    if (pageTitle) {
-        pageTitle.textContent = isMarket ? 'Mercado em Tempo Real' : 'Favoritos';
-    }
 
     if (!isMarket) {
         const favorites = getFavorites();

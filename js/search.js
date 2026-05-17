@@ -29,7 +29,7 @@ export function filterCoins(coins, query) {
  * @param {Array} coins - Full coin list fetched from the API.
  */
 export function initSearch(coins) {
-    const searchInput = document.querySelector('.search-group__input');
+    const searchInput = document.getElementById('market-search');
 
     if (!searchInput) return;
 

@@ -11,6 +11,7 @@
 .main-content {
     overflow-y: auto;
     min-width: 0; /* prevent grid blowout */
+    padding-top: var(--header-height);
 }
 
 /* ===== DESKTOP (≥1024px) ===== */

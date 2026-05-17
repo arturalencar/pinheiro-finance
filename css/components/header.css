@@ -1,0 +1,68 @@
+/* ==========================================================
+   APP HEADER  — full-width fixed bar, overlaps sidebar
+   Logo + name centred. Hamburger on the left (mobile only).
+   ========================================================== */
+
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    z-index: 1100; /* above sidebar (1000) and overlay (999) */
+
+    display: grid;
+    /* three columns: [hamburger] [centre brand] [spacer mirror] */
+    grid-template-columns: 2.5rem 1fr 2.5rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1rem;
+
+    background-color: var(--bg-sidebar);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Hamburger (mobile only) ──────────────────────────── */
+.app-header .sidebar__toggle {
+    display: flex;
+    grid-column: 1;
+}
+
+/* ── Brand block (always centred) ────────────────────── */
+.app-header__brand {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    user-select: none;
+}
+
+.app-header__logo {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--text-primary);
+    flex-shrink: 0;
+}
+
+.app-header__name {
+    font-size: var(--fs-subtitle);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ── Desktop: hide hamburger, collapse side columns ───── */
+@media (min-width: 1024px) {
+    .app-header {
+        /* sidebar width | centred brand | mirror */
+        grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width);
+        padding: 0 2rem;
+    }
+
+    .app-header .sidebar__toggle {
+        display: none;
+    }
+}

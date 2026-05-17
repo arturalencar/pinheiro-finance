@@ -10,10 +10,10 @@
  */
 export function initSidebar(onNavigate) {
     const sidebar = document.querySelector('.sidebar');
-    const toggle  = document.getElementById('sidebar-toggle');
     const overlay = document.getElementById('sidebar-overlay');
+    const toggle  = document.getElementById('sidebar-toggle');
 
-    if (!sidebar || !toggle || !overlay) return;
+    if (!sidebar || !overlay || !toggle) return;
 
     // ── Helpers ────────────────────────────────────────────────────────────
 
