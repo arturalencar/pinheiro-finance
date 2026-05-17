@@ -52,6 +52,9 @@
   --text-primary: #1e2530;   
   --text-secondary: #687181; 
   
+  --green: #01b254;
+  --red: #cf2626;
+
   --shadow-sm: 0 2px 8px rgba(30, 37, 48, 0.04);
   --shadow-md: 0 4px 20px rgba(30, 37, 48, 0.08);
 }
