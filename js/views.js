@@ -16,7 +16,7 @@ export function setAllCoins(coins) {
 }
 
 /**
- * Shows the requested view and updates nav link active states and the page title.
+ * Shows the requested view and updates nav link active states.
  * @param {'market' | 'favorites'} viewName
  */
 export function showView(viewName) {

@@ -73,6 +73,11 @@
     font-size: 1rem;
 }
 
+.market-table .market-cap-cell {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
 .btn-favorite {
     background: none;
     border: none;

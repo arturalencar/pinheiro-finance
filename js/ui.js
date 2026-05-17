@@ -1,3 +1,19 @@
+// ── Helpers ────────────────────────────────────────────────────────────────
+
+/**
+ * Formats a market cap number as a compact BRL string.
+ * e.g. 2_100_000_000_000 → "R$ 2,1T"  |  450_000_000 → "R$ 450M"
+ */
+function formatMarketCap(value) {
+    if (!value) return '—';
+    return value.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        notation: 'compact',
+        maximumFractionDigits: 1,
+    });
+}
+
 export function renderTable(coins) {
 	const tableBody = document.querySelector("#coin-table-body");
 
@@ -28,6 +44,9 @@ export function renderTable(coins) {
 				</td>
 				<td class="${isPositive ? 'text-positive' : 'text-negative'}" data-label="Variação 24h">
 					${isPositive ? '+' : ''}${coin.price_change_percentage_24h.toFixed(2)}%
+				</td>
+				<td class="market-cap-cell" data-label="Market Cap">
+					${formatMarketCap(coin.market_cap)}
 				</td>
 				<td data-label="Favoritar">
 					<button

@@ -1,9 +1,8 @@
 /* ==========================================================
-   APP HEADER  — full-width fixed bar, overlaps sidebar
-   Logo + name centred. Hamburger on the left (mobile only).
+   HEADER — full-width fixed bar, overlaps sidebar
    ========================================================== */
 
-.app-header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -24,13 +23,13 @@
 }
 
 /* ── Hamburger (mobile only) ──────────────────────────── */
-.app-header .sidebar__toggle {
+.header .sidebar__toggle {
     display: flex;
     grid-column: 1;
 }
 
 /* ── Brand block (always centred) ────────────────────── */
-.app-header__brand {
+.header__brand {
     grid-column: 2;
     display: flex;
     align-items: center;
@@ -41,14 +40,14 @@
     user-select: none;
 }
 
-.app-header__logo {
+.header__logo {
     height: 2rem;
     width: 2rem;
     fill: var(--text-primary);
     flex-shrink: 0;
 }
 
-.app-header__name {
+.header__name {
     font-size: var(--fs-subtitle);
     font-weight: 600;
     white-space: nowrap;
@@ -56,13 +55,13 @@
 
 /* ── Desktop: hide hamburger, collapse side columns ───── */
 @media (min-width: 1024px) {
-    .app-header {
+    .header {
         /* sidebar width | centred brand | mirror */
         grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width);
         padding: 0 2rem;
     }
 
-    .app-header .sidebar__toggle {
+    .header .sidebar__toggle {
         display: none;
     }
 }
