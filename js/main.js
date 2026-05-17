@@ -7,6 +7,7 @@ import { initTheme }                       from './theme.js';
 import { initSidebar }                     from './sidebar.js';
 import { showView, setAllCoins }           from './views.js';
 import { initFavorites, syncFavoriteButtons } from './favorites.js';
+import { initSearch }                      from './search.js';
 
 async function init() {
     // ── UI initialisation ─────────────────────────────────────────────────
@@ -28,6 +29,7 @@ async function init() {
     renderHighlights(coins.slice(0, 3));
     syncFavoriteButtons();            // apply persisted favorites to the table
     initFavorites();                  // wire up favorite-toggle click handler
+    initSearch(coins);                // wire up search input (filter + re-render)
 }
 
 init();
